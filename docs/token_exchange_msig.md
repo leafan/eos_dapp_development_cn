@@ -50,7 +50,9 @@ executed transaction: 0e49a421f6e75f4c5e09dd738a02d3f51bd18a0cf31894f68d335cd70d
 #   eosio.token <= eosio.token::create          {"issuer":"eosio","maximum_supply":"1000000000.0000 BOS","can_freeze":0,"can_recall":0,"can_whitelis...
 ```
 再执行 issue 操作发行，只有发行后才能从区块链上看到该代币余额：
+```
 $ cleos push action eosio.token issue '[ "eosio", "1000000000.0000 BOS", "memo"]' -p eosio.token
+```
 
 另外，还有一种较为复杂的方式，使用JSON格式的参数：
 ```
