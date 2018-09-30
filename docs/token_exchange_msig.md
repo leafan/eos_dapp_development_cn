@@ -1,7 +1,3 @@
-## 在EOSIO上发行代币
-#### 翻译：古千峰@BTCMedia
-
-*本节内容假设您已掌握《智能合约入门》一节*
 
 现在，其实已经搭建起来的区块链并不能做多少事情，所以，首先让我们来部署一个代币合约`eosio.token`。这个合约能让许多不同的代币同时在一个智能合约上发行，但是却能被不同用户管理。
 
@@ -53,6 +49,8 @@ $ cleos push action eosio.token create '[ "eosio", "1000000000.0000 BOS", 0, 0, 
 executed transaction: 0e49a421f6e75f4c5e09dd738a02d3f51bd18a0cf31894f68d335cd70d9c0e12  260 bytes  1000 cycles
 #   eosio.token <= eosio.token::create          {"issuer":"eosio","maximum_supply":"1000000000.0000 BOS","can_freeze":0,"can_recall":0,"can_whitelis...
 ```
+再执行 issue 操作发行，只有发行后才能从区块链上看到该代币余额：
+$ cleos push action eosio.token issue '[ "eosio", "1000000000.0000 BOS", "memo"]' -p eosio.token
 
 另外，还有一种较为复杂的方式，使用JSON格式的参数：
 ```
